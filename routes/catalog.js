@@ -149,7 +149,7 @@ var book_instance_controller = require('../controllers/bookinstanceController');
 /// BOOK ROUTES ///
 
 // GET catalog home page.
-router.get('/', book_controller.index);
+// router.get('/', book_controller.index);
 
 /**
  * @swagger
