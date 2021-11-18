@@ -6,8 +6,9 @@
   },
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "devstart": "nodemon app.js"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=express-locallibrary-tutorial-RESTfull-API:* & npm run devstart"
   },
   "dependencies": {
     "async": "^3.2.2",

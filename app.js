@@ -51,28 +51,6 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-specs.onload = function() {
-
-  // hide the entire Errors container
-  const HideAllErrorsPlugin = () => {
-    return {
-      wrapComponents: {
-        errors: () => () => null
-      }
-    }
-  }
-
-  const ui = SwaggerUIBundle({
-    
-    plugins: [
-      HideAllErrorsPlugin,                // <---------------
-      SwaggerUIBundle.plugins.DownloadUrl
-    ],
-  
-  });
-
-};
-
 
 const app = express();
 
@@ -123,13 +101,5 @@ app.use(function(err, req, res, next) {
   res.send('error');
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
-
-app.listen(port, function() {
-    console.log("Server has started successfully");
-});
 
 module.exports = app;
