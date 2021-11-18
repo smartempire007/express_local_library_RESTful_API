@@ -32,11 +32,8 @@ build/Release
 node_modules
 jspm_packages
 
-# Optional npm cache directory
-.npm
+# Optional package-lock directory
+package-lock.json
 
 # Optional REPL history
 .node_repl_history
-
-# Server
-bin
