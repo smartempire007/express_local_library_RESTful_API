@@ -6,10 +6,11 @@
   },
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www",
-    "serverstart": "DEBUG=express-locallibrary-tutorial-RESTful-API:* & npm run devstart"
+    "start": "node app.js",
+    "devstart": "nodemon app.js"
+    
   },
+
   "dependencies": {
     "async": "^3.2.1",
     "compression": "^1.7.4",
@@ -29,7 +30,7 @@
   "devDependencies": {
     "nodemon": "^2.0.12"
   },
-  "description": "---\r _Tutorial for \"Local Library\" website written in Node and Express js_\r ---",
+  "description": "---\r _Tutorial for \"Local Library RESTful API\" website written in Node and Express js_\r ---",
   "main": "app.js",
   "author": "",
   "license": "ISC"
