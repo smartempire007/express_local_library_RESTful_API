@@ -59,12 +59,8 @@ var book_instance_controller = require('../controllers/bookinstanceController');
  *                     type: string
  *                     description: The title of the book.
  *                 author:
- *                     type: array
- *                     items:
- *                         allOf:
- *                             - $ref: '#/component/schemas/Author'
- *                             - type: object
- *                             - description: The importing author schema to the book schema.
+ *                     type: object
+ *                     description: The importing author schema to the book schema.
  *                 summary:
  *                     type: string
  *                     description: The summary of the book .
@@ -72,10 +68,8 @@ var book_instance_controller = require('../controllers/bookinstanceController');
  *                     type: string
  *                     description: ISBN is the International Standard Book Number is a numeric commercial book identifier which is intended to be unique. Publishers purchase ISBNs from an affiliate of the international ISBn agency. an ISBN is assigned to each separate edition and variation of a publication.
  *                 genre:
- *                     allOf:
- *                         - type: object
- *                         - $ref: '#/component/schemas/Genre'
- *                         - description: The importing genre schema to the book schema.
+ *                    type: object
+ *                    description: The importing genre schema to the book schema.
  *                 example:
  *                     - id: 613bc87f4b511e8a13690978
  *                     - title: The Wise Man's Fear (The Kingkiller Chronicle, #2)
@@ -97,10 +91,8 @@ var book_instance_controller = require('../controllers/bookinstanceController');
  *                     type: integer
  *                     description: The auto-generated id of the author.
  *                 book:
- *                     allOf: 
- *                         - $ref: '#/component/schemas/Book'
- *                         - type: object
- *                         - description: The importing book schema to the book instance schema.
+ *                     type: object
+ *                     description: The importing book schema to the book instance schema.
  *                 imprint:
  *                     type: string
  *                     description: The imprint page is the page that appears on the back of the title page. it contains every thing we need to know about who wrote the book, who the publisher is, how we can contact them where the book was printed, what the ISBN is, etc..

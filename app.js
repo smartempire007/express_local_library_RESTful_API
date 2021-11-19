@@ -1,8 +1,10 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const logger = require('morgan');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+
 
 // const indexRouter = require('./routes/index');
 // const usersRouter = require('./routes/users');
@@ -11,6 +13,9 @@ const catalogRouter = require('./routes/catalog');  //Import routes for "catalog
 const compression = require('compression');
 
 const helmet = require('helmet');
+
+
+
 
 // Configuration swagger documentation.
 
@@ -42,6 +47,14 @@ const options = {
         description: "Development server",
         
       },
+
+      {
+        url: "https://library-rest-apis.herokuapp.com/catalog",
+        description: "production server",
+        
+      },
+
+
     ],
   },
 
@@ -54,6 +67,7 @@ const specs = swaggerJsdoc(options);
 
 const app = express();
 
+
 app.use(
   "/api-docs",
   swaggerUi.serve,
@@ -63,7 +77,7 @@ app.use(
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-const dev_db_url = "mongodb+srv://Joseph:smartempire007@cluster0.borbi.mongodb.net/local_library?retryWrites=true&w=majority;" /*"mongodb://localhost:27017/local_library";*/
+const dev_db_url = process.env.DEV_DB_URL; /*"mongodb://localhost:27017/local_library";*/
 
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
