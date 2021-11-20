@@ -43,7 +43,7 @@ const options = {
 
     servers: [
       {
-        url: "http://localhost:3000/catalog",
+        url: process.env.LOCAL_URL,
         description: "Development server",
         
       },
