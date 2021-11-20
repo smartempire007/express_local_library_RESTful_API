@@ -74,6 +74,9 @@ app.use(
   swaggerUi.setup(specs, {explorer: true})
 );
 
+app.get('/', (req, res) => {
+  res.redirect('/api-docs')
+});
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
