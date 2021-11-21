@@ -43,17 +43,9 @@ const options = {
 
     servers: [
       {
-        url: process.env.LOCAL_URL,
-        description: "Development server",
-        
-      },
-
-      {
-        url: process.env.CLOUD_URL,
+        url: process.env.BASE_URL,
         description: "production server",
-        
-      },
-
+      }
 
     ],
   },
@@ -75,7 +67,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.redirect('/api-docs')
+  res.redirect("/api-docs",swaggerUi.serve,swaggerUi.setup(specs, {explorer: true}));
 });
 
 // Set up mongoose connection
